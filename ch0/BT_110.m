@@ -1,0 +1,58 @@
+% Bai tap 1.10
+
+
+% a) 
+%% Define differential equation
+syms y(x)
+Dy = diff(y);
+
+ode = diff(y, x) - y / (x * log(x)) == x * log(x);
+
+%% Solve the differential equation
+solution = dsolve(ode);
+
+%% Display the solution
+disp(solution);
+
+% b)
+%% Define differential equation
+syms y(x)
+Dy = diff(y);
+
+ode = x * diff(y, x) + y ==  cos(x);
+
+%% Solve the differential equation
+solution = dsolve(ode);
+
+%% Display the solution
+disp(solution);
+
+% c)
+%% Define differential equation
+syms y(x)
+Dy = diff(y);
+
+ode = diff(y, x) - y * tan(x) == 1 / cos(x);
+cond1 = y(pi) == 1;
+
+%% Solve the differential equation
+solution = dsolve(ode, cond1);
+
+%% Display the solution
+disp(solution);
+
+% d) 
+%% Define differential equation
+syms y(x)
+Dy = diff(y);
+
+ode = diff(y, x, 2) - 2*diff(y, x) + 5*y == 0;
+cond1 = y(0) == 1;
+cond2 = Dy(0) == 1;
+conds = [cond1, cond2];
+
+%% Solve the differential equation
+solution = dsolve(ode, conds);
+
+%% Display the solution
+disp(solution);
