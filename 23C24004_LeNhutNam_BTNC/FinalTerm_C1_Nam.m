@@ -19,7 +19,7 @@
 
 % Giải quyết bài toán
 % Xóa bộ nhớ, xóa các biến trước đó
-clc; clear all; format long % set up
+clc; clear all; format long
 
 % Khoảng giá trị của x
 x_start = 0; x_end = 1;
@@ -99,6 +99,10 @@ for i_tim=1:Nt              % Vòng lặp thời gian
         Ert = Ert + (U(k) - Ue(k))^2*dL;
     end
     Er = Er + dt*Ert;
-end % loop of time
+end % vòng lặp thời gian
 
-Er=sqrt(Er); disp(Er);
+% Hiển thị kết quả
+disp(['Numerical solution u_h: [' num2str(U(:).') ']']) ;
+disp(['TExact solution u_e: [' num2str(Ue(:).') ']']) ;
+disp('Error between u_h and u_e:');
+disp(sqrt(Er));

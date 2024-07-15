@@ -83,7 +83,7 @@ for K_start = 1:50
     end
 end
 
-% Display results
+% Hiển thị kết quả
 fprintf('Optimal K is from x = %.2f to x = %.2f\n', (optimal_K_start-1)*dL, (optimal_K_end-1)*dL);
 fprintf('Maximum total heat at t = 5 is %.2f\n', max_total_heat);
 
@@ -127,9 +127,9 @@ function total_heat = compute_total_heat(K_start, K_end, Nt, Ne, ele, dL, dt, U_
             Ert = Ert + (U(k) - Ue(k))^2*dL;
         end
         Er = Er + dt*Ert;
-    end % loop of time
+    end
 
-    % Total heat at t = 5
+    % Tổng nhiệt độ tại t = 5
     total_heat = sum(U(:, end)) * dL;
     fprintf("Total head: %.2f\n", total_heat);
     fprintf("Error: %.2f\n", Er);

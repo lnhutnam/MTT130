@@ -2,7 +2,7 @@
 % \dfrac{\partial u}{\partial t}(x, t) = D \dfrac{\partial^2 u}{\partial^2 x}(x, t) 
 % - V \dfrac{\partial u}{\partial x}(x, t),
 
-% Với $D = 1$ và $V = 1$, hãy giải bài toán (\ref{eq:problem4}) tìm nghiệm 
+% Với $D = 1$ và $V = 1$, hãy giải bài toán tìm nghiệm 
 % xấp xỉ $u_h$ tại thời điểm $t = 5$ với lưới 20 phần tử và 10 bước thời gian.
 
 % Giải quyết bài toán
@@ -106,4 +106,8 @@ for i_tim=1:Nt              % Vòng lặp thời gian
     Er = Er + dt*Ert;
 end % loop of time
 
-Er=sqrt(Er); disp(Er);
+% Hiển thị kết quả
+disp(['Numerical solution u_h: [' num2str(U(:).') ']']) ;
+disp(['Exact solution u_e: [' num2str(Ue(:).') ']']) ;
+disp('Error between u_h and u_e:');
+disp(sqrt(Er));

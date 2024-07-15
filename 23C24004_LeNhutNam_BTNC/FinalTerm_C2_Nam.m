@@ -23,6 +23,7 @@ t_start = 0; t_end = 5;
 T = t_end - t_start;
 
 % Số lượng phần tử của lưới
+% Thay đổi Ne, Ne = 5, 10, 15, 20, 30
 Ne = 20;
 
 % Kích thước bước không gian (Spatial step size)
